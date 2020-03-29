@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+export interface Post {
+  title: string
+  text: string
+  id?: number
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +13,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'baseApplication';
+
+  posts: Post[] = [
+    {title: 'Хочу выучить Angular компоненты', text: 'Я все еще учу компоненты', id: 1},
+    {title: 'Следующий блок', text: 'Будет про директивы и еще про пайпы', id: 2}
+  ]
 }
+
