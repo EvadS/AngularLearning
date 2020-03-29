@@ -15,7 +15,10 @@ export class AppComponent {
 
   img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsm-dQHFmWp9Xw1e-4BfLDr67vBq5cil6OytRJExumqHUzTHVZ'
 
-  inputValue = ''
+  inputValue = 'Initial'
+
+  // ------------
+  myTitle = 'Initial value'
 
   constructor() {
     setTimeout(() => {
@@ -27,5 +30,18 @@ export class AppComponent {
   onInput(event?){
     console.log('Event', event)
     this.inputValue = event.target.value
+  }
+
+  onBlur(str: string) {
+    this.inputValue = str
+  }
+
+  onClick() {
+    console.log('Click!')
+  }
+
+  onMyInput(event:any){
+    this.myTitle = event.target.value;
+
   }
 }

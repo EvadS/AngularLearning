@@ -1,7 +1,25 @@
-<h1>Hello Angular World!</h1>
+<h1>Hello Angular World!
+
+  <div class="2-way-bindings">
+    <h2> 2 way data binding </h2>
+      <input type="text" [value]="myTitle" (input)="onMyInput($event)"/>
+    <p>{{myTitle}}</p>
+  <p>Ng model</p>
+    <input type="text" [(ngModel)]="myTitle"/>
+  </div>
+<hr/>
+
 <div>
-  <input type="text" (input)="onInput($event)">
-  <p><strong>{{inputValue}}</strong></p>
+  <h2> Data bindings</h2>
+  <button (click)="onClick()">Click me!</button>
+
+  <input
+    type="text"
+    (keyup.enter)="onInput($event)"
+    (blur)="onBlur(myInput.value)"
+    #myInput
+  >
+
 </div>
 
 <app-post></app-post>
