@@ -2,30 +2,103 @@
 
   <div class="2-way-bindings">
     <h2> 2 way data binding </h2>
-      <input type="text" [value]="myTitle" (input)="onMyInput($event)"/>
+    <input type="text" [value]="myTitle" (input)="onMyInput($event)"/>
     <p>{{myTitle}}</p>
-  <p>Ng model</p>
+    <p>Ng model</p>
     <input type="text" [(ngModel)]="myTitle"/>
   </div>
-<hr/>
+  <hr/>
+  <div>
+    <p>ng-Style</p>
+    <button (click)="backgroundToggle=!backgroundToggle"> Toggle</button>
 
-<div>
-  <h2> Data bindings</h2>
-  <button (click)="onClick()">Click me!</button>
+    <div [ngStyle]="{
+      width:'200px',
+      borderRadius: '5px',
+      border: '1px solid #ccc',
+      background: backgroundToggle ? 'red' : 'blue'
+  }">
+      <p>Some text</p>
+    </div>
+  </div>
+  <hr/>
+  <div>
+    <p>Ng Class </p>
+    <div>
 
-  <input
-    type="text"
-    (keyup.enter)="onInput($event)"
-    (blur)="onBlur(myInput.value)"
-    #myInput
-  >
+      <p
+        [class.blue]="!backgroundToggle"
+        [class.red]="backgroundToggle"
+      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, ratione.</p>
+    </div>
+  </div>
+  <div>
+    <p>ng if</p>
 
-</div>
+    <p *ngIf="backgroundToggle; else blueP" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ratione.</p>
 
-<app-post></app-post>
-<app-post></app-post>
-<hr/>
-<app-post4></app-post4>
-<img [src]="img" alt="">
-<hr/>
+    <ng-template #blueP>
+      <p class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, in?</p>
+    </ng-template>
+
+  </div>
+
+  <div>
+    <h3>Ng switch</h3>
+
+    <button (click)="toggleSW = !toggleSW">toggleSW</button>
+    <button (click)="toggleSW = 111">Set 111</button>
+
+    <div [ngSwitch]="toggleSW">
+      <p *ngSwitchCase="true" class="red">Lorem ipsum.</p>
+      <p *ngSwitchCase="false" class="blue">Lorem ipsum. Lorem ipsum.</p>
+      <p *ngSwitchDefault>Lorem ipsum.</p>
+    </div>
+
+  </div>
+  <div>
+    <p> ngFor</p>
+    <div>
+      <p>fibonacci</p>
+      <ul>
+        <li *ngFor="let n of arr; let idx=index">
+         [{{idx+1}}] : <strong>{{n}}</strong>
+        </li>
+      </ul>
+    </div>
+    <ul style="list-style: none">
+      <li *ngFor="let post of objs">
+        <p>{{post.title}} <b>{{post.author}}</b></p>
+        <ul>
+          <li *ngFor="let comment of post.comments">
+            <div>
+              <small>{{comment.name}}</small>
+              <p>{{comment.text}}</p>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <hr/>
+  <div>
+    <h2> Data bindings</h2>
+    <button (click)="onClick()">Click me!</button>
+
+    <input
+      type="text"
+      (keyup.enter)="onInput($event)"
+      (blur)="onBlur(myInput.value)"
+      #myInput
+    >
+
+  </div>
+
+  <app-post></app-post>
+  <app-post></app-post>
+  <hr/>
+  <app-post4></app-post4>
+  <img [src]="img" alt="">
+  <hr/>
 
