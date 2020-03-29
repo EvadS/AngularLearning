@@ -8,6 +8,7 @@ import {Post} from '../app.component';
 })
 export class PostComponent implements OnInit {
 
+  // что - то внутрь
   @Input() post: Post;
 
 
