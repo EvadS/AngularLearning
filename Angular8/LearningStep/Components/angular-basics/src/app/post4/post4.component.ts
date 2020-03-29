@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-post4',
-  templateUrl: './post4.component.html',
-  styleUrls: ['./post4.component.css']
+  template: `
+    <div class="post4">
+      <h2>Post title</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, suscipit!</p>
+    </div>
+  `,
+  styles: [`
+    .post4 {
+      padding: .5rem;
+      border: 2px solid black;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+  `]
 })
-export class Post4Component implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class Post4Component {
 
 }
