@@ -2,7 +2,7 @@
   <h1>Angular Components</h1>
   <app-post-form
 
-  (onAdd)="updatePosts($event)">
+    (onAdd)="updatePosts($event)">
   </app-post-form>
 
   <hr/>
@@ -10,11 +10,12 @@
   <app-post
     *ngFor="let item of posts"
     [post]="item"
-
   >
-    <small *ngIf="item.text.length> 10;else short"> Пост длинный </small>
-    <ng-template #short>
-      <small>Пост короткий</small>
-    </ng-template>
+    <div #info>
+      <small *ngIf="item.text.length> 10;else short"> Пост длинный </small>
+      <ng-template #short>
+        <small>Пост короткий</small>
+      </ng-template>
+    </div>
   </app-post>
 </div>
