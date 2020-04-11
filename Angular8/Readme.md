@@ -33,5 +33,11 @@ ng generate component post2
  ```bash
  ng g c post4 --skipTests
  ``` 
- 
- 
+ ## Derictives
+ ```bash 
+ ng g d style2 --skipTests
+ ```
+### Set folder 
+```bash 
+ ng g d directivers/style2 --skipTests
+ ```
