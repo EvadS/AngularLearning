@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
     this.form = new FormGroup({
       email: new FormControl('', [
         Validators.required,
-        Validators.email]),
+        Validators.email
+      ]),
       password: new FormControl(null, [
         Validators.required,
         Validators.minLength(6)
