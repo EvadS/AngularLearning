@@ -41,3 +41,9 @@ ng generate component post2
 ```bash 
  ng g d directivers/style2 --skipTests
  ```
+ 
+ ## Validators
+ 
+ ```bash
+ 
+ ```
