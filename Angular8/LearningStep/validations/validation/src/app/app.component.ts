@@ -17,7 +17,9 @@ export class AppComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.form)
+    console.log('Form: ', this.form)
+   const formData = {...this.form.value}
+    console.log('Form data : ', formData)
   }
 }
 
