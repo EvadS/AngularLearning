@@ -24,6 +24,11 @@ ng serve
  ```bash 
 ng generate component post2
  ```
+ 
+ ng generate component  update-employee/update-employee.component
+ 
+ update-employee/update-employee.component
+ 
  small command version
  ```bash
  ng g c post3
@@ -42,8 +47,15 @@ ng generate component post2
  ng g d directivers/style2 --skipTests
  ```
  
- ## Validators
+ ## HttpClient
+ 
+ https://jsonplaceholder.typicode.com/
+ ```bash
+
+ ```
+ 
+ ##sevices 
  
  ```bash
- 
- ```
+  ng g s services/local-counter --skipTests
+ ``

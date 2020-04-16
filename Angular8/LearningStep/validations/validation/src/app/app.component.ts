@@ -38,6 +38,7 @@ export class AppComponent implements OnInit {
       return;
     }
 
+    this.form.reset()
   }
 
   setCapital() {
