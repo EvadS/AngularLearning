@@ -1,11 +1,14 @@
-import {Component} from '@angular/core'
-import {PostsService} from '../posts.service'
+import {Component} from '@angular/core';
+import {PostsService} from '../posts.service';
 
 @Component({
-  selector: 'app-posts',
-  templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.scss']
+    selector: 'app-posts',
+    templateUrl: './posts.component.html',
+    styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent {
-  constructor(private postsService: PostsService) {}
+    showIds = false;
+
+    constructor(private postsService: PostsService) {
+    }
 }
